@@ -67,7 +67,7 @@ server.post("/post/url",(req,res)=>{ //url matches landing page
     }).catch(error=>{
         console.log(error)
     })
-
+})
 
 server.get("/form", (req, res) => {
   res.send("This is the form");
