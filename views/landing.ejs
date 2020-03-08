@@ -3,82 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Welcome</title>
   </head>
   <body>
     <!-- container for sign-in -->
 
-    <div class="form-container__wrapper">
-      <!-- form on leftside -->
-      <div class="form__left">
-        <header class="form__font--header">
-          <h1>DINO$</h1>
-        </header>
-
-        <p>Lets Get Started!</p>
-
-        <form id="" class="" method="POST" action="/">
-          <label class="form__label">How should we call you?</label>
-          <input
-            class="form__input"
-            name="name"
-            type="text"
-            placeholder="Name"
-          />
-
-          <label class="form__label">Birthday</label>
-          <input
-            class="form__input"
-            name="birthday"
-            type="date"
-            placeholder="MM/DD"
-          />
-
-          <!-- <label class="form__label">Starting point</label>
+     <div class="form-container__wrapper">
+        <!-- form on leftside -->
+        <div class="form__left">
+          <header>
+            <h1 class="form__font--header">DINO$</h1>
+          </header>
+  
+          <p>Lets Get Started!</p>
+  
+          <form id="" class="" method="GET" action="/dashboard">
+            <label class="form__label">How should we call you?</label>
+            <i class="material-icons">&#xE87C;</i>
+            <input
+              class="form__input"
+              name="name"
+              type="text"
+              placeholder="Name"
+            ></input>
+  
+            <label class="form__label">Birthday</label>
+            <input class="form__input" name="birthday" type="date" placeholder="MM/DD" />
+  
+            <!-- <label class="form__label">Starting point</label>
             <input class="form__input" name="startingPoint" type="text" placeholder="Amount" /> -->
+  
+            <label class="form__label">How much is it?</label>
+            <input
+              class="form__input"
+              name="cost"
+              type="text"
+              placeholder="Goal Amount"
+            />
+  
+            <label class="form__label">What's it for?</label>
+            <input class="form__input" name="goal" type="text" placeholder="Goal" />
+  
+            <label class="form__label">When to start?</label>
+            <input
+              class="form__input"
+              name="startDate"
+              type="text"
+              placeholder="Start Date"
+            />
+  
+            <label class="form__label">How much can you put in once a month?</label>
+            <input
+              class="form__input"
+              name="depositAmount"
+              type="text"
+              placeholder="$$$"
+            />
 
-          <label class="form__label">How much is it?</label>
-          <input
-            class="form__input"
-            name="cost"
-            type="text"
-            placeholder="Goal Amount"
-          />
-
-          <label class="form__label">What's it for?</label>
-          <input
-            class="form__input"
-            name="goal"
-            type="text"
-            placeholder="Goal"
-          />
-
-          <label class="form__label">When to start?</label>
-          <input
-            class="form__input"
-            name="startDate"
-            type="text"
-            placeholder="Start Date"
-          />
-
-          <label class="form__label">Target Goal:</label>
-          <input
-            class="form__input"
-            name="endDate"
-            type="text"
-            placeholder="Target Date"
-          />
-
-          <button class="form__btn" type="submit">Let's get started!</button>
-        </form>
+            <label class="form__label">How much do you have?</label>
+            <input
+              class="form__input"
+              name="currentBalance"
+              type="text"
+              placeholder="$$$$"
+            />
+            <button class="form__btn" type="submit">Let's get started!</button>
+          </form>
+        </div>
+  
+        <!-- end of form //right-side image -->
+  
+        <div class="form__right"></div>
+  
+        <!--end of image -->
       </div>
-
-      <!-- end of form //right-side image -->
-
-      <div class="form__right"></div>
-
-      <!--end of image -->
     </div>
     <footer></footer>
   </body>

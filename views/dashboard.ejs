@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
     <!-- <h3>Hello<input type="hidden" name="displayName" value="">!</h3> -->
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
-<body class="dash-body"> 
+  <body class="dash-body">
+    <!-- photo -->
+    <!-- <div id="steg-photo"><img src="/assets/photo/steg.png" /></div> -->
 
     <div class="container">
       <div class="row">
         <div class="col-lg-10 col-xl-9 mx-auto">
           <div class="card card-signin flex-row my-5">
             <div class="card-img-left d-none d-md-flex bg-image">
-               <!-- Background image for card set in CSS! -->
+              <!-- Background image for card set in CSS! -->
             </div>
             <div class="card-body">
-              <h3 class="login-heading mb-4">Hi <%= username %>!</h3>
+              <h3 class="login-heading mb-4">Hi <%= data.name %>!</h3>
               <div class="container">
                 <div class="row">
                   <div class="col-sm">
                     <form class="form-signin">
                       <div class="form-label-group">
-                        <input type="" id="" class="form-control" placeholder="amount" required>
-                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Put In!</button>
+                        <input
+                          type=""
+                          id=""
+                          class="form-control"
+                          placeholder="amount"
+                          required
+                        />
+                        <button
+                          class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          type="submit"
+                        >
+                          Put In!
+                        </button>
                       </div>
                     </form>
                   </div>
                   <div class="col-sm">
                     <form class="form-signin">
                       <div class="form-label-group">
-                        <input type="" id="" class="form-control" placeholder="amount" required>
-                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Take out!</button>
+                        <input
+                          type=""
+                          id=""
+                          class="form-control"
+                          placeholder="amount"
+                          required
+                        />
+                        <button
+                          class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          type="submit"
+                        >
+                          Take out!
+                        </button>
                       </div>
                     </form>
                   </div>
-      
-
-                  
-                  
-
-
-      
                 </div>
-                <p>Your current balance: $<%= balance %></p>
-                <p>Goal: $200.00</p>
-                <p>Goal Target: a new bike</p>
+                <p>Your current balance: $<%= data.currentBalance %></p>
+                <p>Goal: $<%= data.cost %></p>
+                <p>Goal Name: <%= data.goal %></p>
               </div>
-
-          
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="budget-container">
+      <div class="time-container card card-signin pb-5 pt-5 px-5 yay">
+        <div class="money-container py-5 px-3">
+          <p>In a year: $<%= year %></p>
+        </div>
+      </div>
+
+      <div class="time-container card card-signin pb-5 pt-5 px-5 noo">
+        <div class="money-container py-5 px-3">
+          <p>In a month: $<%= month %></p>
+        </div>
+      </div>
+    </div>
   </body>
-
-
 </html>

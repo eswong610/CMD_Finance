@@ -33,18 +33,20 @@ body {
 
   &__font {
     &--header {
+      margin: 0;
     }
   }
 
   &__label {
     margin: 5px 0;
+    margin-bottom: 10px;
   }
 
   &__input {
-    margin-bottom: 5px;
-    border-radius: 8px;
+    margin-bottom: 15px;
+    border-radius: 20px;
     padding: 0.5em;
-    border: 1px solid $lightgreen;
+    border: 2px solid $lightgreen;
 
     &:focus {
       outline: none;
@@ -55,13 +57,14 @@ body {
     align-self: center;
     width: 50%;
     padding: 2%;
-    border-radius: 8px;
+    border-radius: 20px;
     background-color: $lightgreen;
+    margin: 20px 0;
   }
 }
 
 form {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
   width: 70%;
 }

@@ -37,22 +37,18 @@ server.get('/finished', (req,res)=>{
 })
 
 userBalance = null;
-server.get('/dashboard', (req,res)=>{
-    let wdAmount = {'wdAmount': (req.body.wdAmount)};
-    axios.get('https://sheet.best/api/sheets/54e2c93f-7ad8-42a8-a6da-a9fe35a77c5b')
-    .then(response=>{
-        let alldata = response['data'];//response['data'][0]['name']
-        let username = alldata[0]['name'];
-        let balance = alldata[0]['balance']
-        userBalance = balance
-        
-        res.render('dashboard', {
-            username: username,
-            balance: balance,
-            wdAmount: wdAmount
-        })
-    })
-    .catch(error=>{console.log('error')})
+
+server.get('/dashboard', (req,res)=>{  
+  let month = calculateMonth(req.query["currentBalance"], req.query["depositAmount"]);
+  let year = calculateYear(req.query["currentBalance"], req.query["depositAmount"])
+  res.render('dashboard.ejs', {
+    data : req.query,
+    month : month,
+    year : year
+    
+  })
+  .catch(Error=>{console.log('error')})
+
 })
 
 server.post("/",(req,res)=>{ //url matches landing page
@@ -82,7 +78,7 @@ server.get("/form", (req, res) => {
             deposit: deposit,  
             withdraw: withdraw
         });
-    })
+    });
 });
 
 
@@ -153,6 +149,38 @@ server.get("/deposit", (req, res) => {
   res.send("this is deposit");
   // res.redirect('/finished')
 });
+
+
+
+
+function calculateMonth(beginningBalance, deposit) {
+  const rate = 0.01;
+  let currentBalance = beginningBalance;
+  let depositAmount = deposit;
+
+
+  //Month: The equation is month = currentBalance * [[1 + (r/n)] ^ nt]
+  let month = (currentBalance * Math.pow((1 + (rate / (1 * 100))), (1/12 * 1))) + (depositAmount*1);
+  let totalBalanceMonth = parseFloat(month).toFixed(2);
+    return totalBalanceMonth;
+
+
+}
+
+
+
+function calculateYear(beginningBalance, deposit) {
+  const rate = 0.01
+  let currentBalance = beginningBalance;
+  let depositAmount = deposit;
+
+  // Year: The equation is A = currentBalance * [[1 + (r/n)] ^ nt]
+  let year = (currentBalance * Math.pow((1 + (rate / (12 * 100))), (12 * 1))) + (depositAmount*12);
+  let totalBalanceYear = parseFloat(year).toFixed(2);
+    return totalBalanceYear;
+  // toFixed is used for rounding the amount with two decimal places.
+}
+
 
 
 
