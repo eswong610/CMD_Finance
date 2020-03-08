@@ -440,7 +440,6 @@ form {
 }
 
 .dash-body {
-  background-color: #dec1f5;
   position: relative;
 }
 
@@ -473,7 +472,7 @@ form {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("./assets/photo/t-rex.jpg");
   background-size: cover;
 }
 
@@ -487,20 +486,26 @@ form {
   display: flex;
   width: 80%;
   border-radius: 8px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #bcd292;
   margin: 0 auto;
   padding: 5% 0;
   -webkit-box-shadow: 3px 5px 5px black;
           box-shadow: 3px 5px 5px black;
 }
 
+.time-container {
+  margin: 0 20px;
+}
+
 .yay {
   background-color: #8ff58f;
 }
 
-.noo-msg, .yay-msg {
+.noo-msg,
+.yay-msg {
   display: none;
 }
 

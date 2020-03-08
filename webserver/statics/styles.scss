@@ -5,7 +5,6 @@
 @import "./styles/partials/_form";
 
 .dash-body {
-  background-color: $medpurple;
   position: relative;
 }
 
@@ -37,8 +36,7 @@
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("./assets/photo/t-rex.jpg");
   background-size: cover;
 }
 
@@ -50,25 +48,30 @@
   display: flex;
   width: 80%;
   border-radius: 8px;
-  justify-content: space-around;
-  background: white;
+  justify-content: center;
+  background: $lightgreen;
   margin: 0 auto;
   padding: 5% 0;
   box-shadow: 3px 5px 5px black;
 }
 
+.time-container {
+  margin: 0 20px;
+}
+
 .yay {
   background-color: rgb(143, 245, 143);
 }
-.noo-msg , .yay-msg {
-    display: none;
+.noo-msg,
+.yay-msg {
+  display: none;
 }
 .noo > div > .noo-msg {
-    display:block !important;
+  display: block !important;
 }
 .yay > div > .yay-msg {
-    display: block !important;
+  display: block !important;
 }
-.noo{
-    background: rgb(255, 146, 146)
+.noo {
+  background: rgb(255, 146, 146);
 }
