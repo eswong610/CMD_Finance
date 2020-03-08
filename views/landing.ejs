@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Welcome</title>
-</head>
-<body>
-    <header>
-        <h1>DINO$</h1>
-    </header>
-    <form id="" class="" method="POST" action="/">
-        How should we call you? <input class="" name="name" type="text" placeholder="Name">
-        Birthday <input class="" name="birthday" type="date" placeholder="MM/DD">
-        <!-- Starting point <input class="" name="startingPoint" type="text" placeholder="Amount"> -->
-        How much is it?<input class="" name="cost" type="text" placeholder="Goal Amount">
-        What's it for?<input class="" name="goal" type="text" placeholder="What is it?">
-        When to start?<input class="" name="startDate" type="text" placeholder="Start Date">
-        Target Goal: <input class="" name="endDate" type="text" placeholder="Target Date">
-        <button class="" type="submit">Let's get started!</button>
-    </form>
-    <footer>
-    </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Welcome</title>
+  </head>
+  <body>
+     <!-- container for sign-in -->
+
+     <div class="form-container__wrapper">
+        <!-- form on leftside -->
+        <div class="form__left">
+          <header class="form__font--header">
+            <h1>DINO$</h1>
+          </header>
+  
+          <p>Lets Get Started!</p>
+  
+          <form id="" class="" action="/withdraw">
+            <label class="form__label">How should we call you?</label>
+            <input
+              class="form__input"
+              name="name"
+              type="text"
+              placeholder="Name"
+            />
+  
+            <label class="form__label">Birthday</label>
+            <input class="" name="birthday" type="date" placeholder="MM/DD" />
+  
+            <!-- <label class="form__label">Starting point</label>
+            <input class="form__input" name="startingPoint" type="text" placeholder="Amount" /> -->
+  
+            <label class="form__label">How much is it?</label>
+            <input
+              class="form__input"
+              name="cost"
+              type="text"
+              placeholder="Goal Amount"
+            />
+  
+            <label class="form__label">What's it for?</label>
+            <input class="form__input" name="goal" type="text" placeholder="Goal" />
+  
+            <label class="form__label">When to start?</label>
+            <input
+              class="form__input"
+              name="startDate"
+              type="text"
+              placeholder="Start Date"
+            />
+  
+            <label class="form__label">Target Goal:</label>
+            <input
+              class="form__input"
+              name="endDate"
+              type="text"
+              placeholder="Target Date"
+            />
+  
+            <button class="form__btn" type="submit">Let's get started!</button>
+          </form>
+        </div>
+  
+        <!-- end of form //right-side image -->
+  
+        <div class="form__right"></div>
+  
+        <!--end of image -->
+      </div>
+    <footer></footer>
+  </body>
 </html>
