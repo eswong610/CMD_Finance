@@ -32,8 +32,8 @@ server.get('/', (req, res)=>{
 })
 
 
-server.get('/finished', (req,res)=>{
-    res.send('fin')
+server.get('/collector', (req,res)=>{
+    res.render('collector')
 })
 
 userBalance = null;
@@ -43,12 +43,12 @@ server.get('/dashboard', (req,res)=>{
   let year = calculateYear(req.query["currentBalance"], req.query["depositAmount"])
   res.render('dashboard.ejs', {
     data : req.query,
-    month : month,
-    year : year
+    month : month, 
+    year : year 
     
   })
   
-
+ 
 })
 
 server.post("/",(req,res)=>{ //url matches landing page
@@ -61,8 +61,8 @@ server.post("/",(req,res)=>{ //url matches landing page
     }).then(done => {
         res.redirect("/dashboard");
     }).catch(error=>{
-        console.log(error)
-    })
+        console.log(error) 
+    }) 
 })
 
 
@@ -79,7 +79,7 @@ server.get("/form", (req, res) => {
             withdraw: withdraw
         });
     });
-});
+}); 
 
 
 server.post("/deposit", (req, res) => {
@@ -181,8 +181,8 @@ function calculateYear(beginningBalance, deposit) {
   // toFixed is used for rounding the amount with two decimal places.
 }
 
-
+ 
 
 
 server.listen( port, () => console.log( `\nServer live at http://localhost:${port}` ) )
-
+ 
