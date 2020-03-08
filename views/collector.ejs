@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Your collection</title>
   </head>
-  <body>
+  <body class="js-container">
     <nav class="">
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
@@ -39,15 +39,132 @@
       </ul>
     </nav>
 
+    <h1 class="collection__font--header">Your Rewards</h1>
+
     <div class="collection">
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
-      <div class="collection__card"></div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
+      <div class="collection__card">
+        <img
+          class="collection__card--img"
+          src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80"
+        />
+        <p>Credit Cactus</p>
+      </div>
     </div>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const Confettiful = function(el) {
+      this.el = el;
+      this.containerEl = null;
+
+      this.confettiFrequency = 0.1;
+      this.confettiColors = ["#666666", "#C9C9CB", "#EBB300", "#FFC705"];
+      this.confettiAnimations = ["slow", "medium", "fast"];
+
+      this._setupElements();
+      this._renderConfetti();
+    };
+
+    Confettiful.prototype._setupElements = function() {
+      const containerEl = document.createElement("div");
+      const elPosition = this.el.style.position;
+
+      if (elPosition !== "relative" || elPosition !== "absolute") {
+        this.el.style.position = "relative";
+      }
+
+      containerEl.classList.add("confetti-container");
+
+      this.el.appendChild(containerEl);
+
+      this.containerEl = containerEl;
+    };
+
+    Confettiful.prototype._renderConfetti = function() {
+      this.confettiInterval = setInterval(() => {
+        const confettiEl = document.createElement("div");
+        const confettiSize = Math.floor(Math.random() * 3) + 7 + "px";
+        const confettiBackground = this.confettiColors[
+          Math.floor(Math.random() * this.confettiColors.length)
+        ];
+        const confettiLeft =
+          Math.floor(Math.random() * this.el.offsetWidth) + "px";
+        const confettiAnimation = this.confettiAnimations[
+          Math.floor(Math.random() * this.confettiAnimations.length)
+        ];
+
+        confettiEl.classList.add(
+          "confetti",
+          "confetti--animation-" + confettiAnimation
+        );
+        confettiEl.style.left = confettiLeft;
+        confettiEl.style.width = confettiSize;
+        confettiEl.style.height = confettiSize;
+        confettiEl.style.backgroundColor = confettiBackground;
+
+        confettiEl.removeTimeout = setTimeout(function() {
+          confettiEl.parentNode.removeChild(confettiEl);
+        }, 9000);
+
+        this.containerEl.appendChild(confettiEl);
+      }, 15);
+    };
+
+    window.confettiful = new Confettiful(
+      document.querySelector(".js-container")
+    );
+  </script>
 </html>
