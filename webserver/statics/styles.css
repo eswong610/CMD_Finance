@@ -622,4 +622,22 @@ body {
 .nav-link:hover {
   color: #8769ac;
 }
+
+.progress-container{
+  width: 50%;
+  margin: 2rem;
+  padding: 0 auto 0 auto;
+  margin-left: 28rem;
+}
+
+.progress{
+  height: 5rem;
+}
+
+.progress-text-container{
+  display:flex;
+  justify-content: space-evenly;
+  width: 85%;
+}
+
 /*# sourceMappingURL=styles.css.map */

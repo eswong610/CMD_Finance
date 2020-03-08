@@ -69,7 +69,7 @@ server.get("/form", (req, res) => {
       let username = alldata[0]["name"];
       let deposit = alldata[0]["balance"];
       let withdraw = alldata[0]["withdraw"];
-      res.render("form", {
+      res.render("form", {  
         username: username,
         deposit: deposit,
         withdraw: withdraw
