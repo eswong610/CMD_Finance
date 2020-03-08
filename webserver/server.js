@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const axios = require('axios')
 
-
 const server = express();
 
 const db = require("./config/key").mongoURI;
@@ -19,6 +18,7 @@ mongoose
   .catch((err) => console.log(err));
 
 
+
 server.use(express.static(__dirname + '/statics/'));
 server.use(bodyParser.urlencoded({extended: true}));
 
@@ -26,6 +26,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 // let userGoal= {'goal': (req.body.goal)}
 // let userTime = {'time': (req.body.time)}
 // let userEta = {'eta': (req.body.eta)};
+
 
 server.set('view engine', 'ejs');
 
@@ -57,14 +58,25 @@ server.get('/withdraw', (req,res)=>{
     
 
 
-    // res.redirect('/finished')
-})
+server.get("/form", (req, res) => {
+  res.send("This is the form");
+});
 
-server.get('/deposit', (req,res)=>{
-    res.send('this is deposit')
-    // res.redirect('/finished')
+server.get("/finished", (req, res) => {
+  res.send("finished page");
+});
 
-})
+server.post("/withdraw", (req, res) => {
+  let wdAmount = { wdAmount: req.body.wdAmount };
 
+  // res.redirect('/finished')
+});
 
-server.listen( port, () => console.log( `\nServer live at http://localhost:${port}` ) )
+server.get("/deposit", (req, res) => {
+  res.send("this is deposit");
+  // res.redirect('/finished')
+});
+
+server.listen(port, () =>
+  console.log(`\nServer live at http://localhost:${port}`)
+);
