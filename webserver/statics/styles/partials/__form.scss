@@ -1,0 +1,51 @@
+body {
+  background: $darkgreen;
+  font-family: "Cabin", sans-serif;
+}
+
+.form-container {
+  &__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80vw;
+    height: 80vh;
+    margin: 10% auto;
+    background: white;
+    box-shadow: 1px 1px 5px 5px black;
+  }
+}
+
+.form {
+  &__left {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 40%;
+    margin: 10% auto;
+  }
+
+  &__right {
+    width: 50%;
+    background-image: url("../statics/assets/photo/piggybank.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__font {
+    &--header {
+    }
+  }
+
+  &__label {
+  }
+
+  &__input {
+  }
+
+  &__btn {
+  }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+}
