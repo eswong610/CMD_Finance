@@ -93,16 +93,20 @@
       </div>
     </div>
 
-    <div class="budget-container">
-      <div class="time-container card card-signin pb-5 pt-5 px-5 yay">
+    <div class="budget-container " >
+      <div class="time-container card card-signin pb-5 pt-5 px-5 <% if ( parseInt(year) >= parseInt(data.cost)){%>yay<%}else{%> noo <% } %>  ">
         <div class="money-container py-5 px-3">
           <p>In a year: $<%= year %></p>
+          <p class="yay-msg"> yayy you can buy the <%= data.goal %> in a year</p>
+          <p class="noo-msg"> N00 you can't buy the <%= data.goal %> in a year</p>
+          
         </div>
       </div>
-
-      <div class="time-container card card-signin pb-5 pt-5 px-5 noo">
+      <div class="time-container card card-signin pb-5 pt-5 px-5 <% if (parseInt(month) >= parseInt(data.cost)){%> yay <%}else{%> noo <% } %>">
         <div class="money-container py-5 px-3">
           <p>In a month: $<%= month %></p>
+          <p class="yay-msg"> yayy you can buy the <%= data.goal %> in a month</p>
+          <p class="noo-msg"> N00 you can't buy the <%= data.goal %> in a month</p>
         </div>
       </div>
     </div>

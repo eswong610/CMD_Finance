@@ -500,6 +500,18 @@ form {
   background-color: #8ff58f;
 }
 
+.noo-msg, .yay-msg {
+  display: none;
+}
+
+.noo > div > .noo-msg {
+  display: block !important;
+}
+
+.yay > div > .yay-msg {
+  display: block !important;
+}
+
 .noo {
   background: #ff9292;
 }
