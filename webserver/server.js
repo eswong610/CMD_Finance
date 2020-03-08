@@ -37,6 +37,7 @@ server.get('/finished', (req,res)=>{
 })
 
 userBalance = null;
+
 server.get('/dashboard', (req,res)=>{  
   let month = calculateMonth(req.query["currentBalance"], req.query["depositAmount"]);
   let year = calculateYear(req.query["currentBalance"], req.query["depositAmount"])
@@ -47,6 +48,7 @@ server.get('/dashboard', (req,res)=>{
     
   })
   .catch(error=>{console.log('error')})
+
 })
 
 server.post("/",(req,res)=>{ //url matches landing page
@@ -76,7 +78,7 @@ server.get("/form", (req, res) => {
             deposit: deposit,  
             withdraw: withdraw
         });
-    })
+    });
 });
 
 
