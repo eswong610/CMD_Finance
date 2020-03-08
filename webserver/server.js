@@ -30,16 +30,16 @@ server.get("/", (req, res) => {
 });
 
 server.get("/collector", (req, res) => {
-  res.render("collector");
+  res.render("collector"); 
 });
 
 server.get("/congrat", (req, res) => {
-  res.render("congrat");
-});
+  res.render("congrat"); 
+}); 
 
 server.get('/collector', (req,res)=>{
     res.render('collector')
-})
+})  
 
 userBalance = null;
 
@@ -67,7 +67,7 @@ server.post("/",(req,res)=>{ //url matches landing page
         res.redirect("/dashboard");
     }).catch(error=>{
         console.log(error) 
-    }) 
+    })  
 })
 
 
