@@ -7,16 +7,6 @@ const axios = require("axios");
 
 const server = express();
 
-// const db = require("./config/key").mongoURI;
-// mongoose
-//   .connect(db, {
-//     useUnifiedTopology: true,
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-//   })
-//   .then(() => console.log("connected to DB!"))
-//   .catch((err) => console.log(err));
-
 server.use(express.static(__dirname + "/statics/"));
 server.use(bodyParser.urlencoded({ extended: true }));
 
@@ -127,34 +117,6 @@ server.post("/withdraw", (req, res) => {
     });
 });
 
-// server.post("/withdraw", (req, res) => {
-//     let wdAmount = req.body.wdAmount
-//     console.log(wdAmount)
-//     let usernameObj = {username: req.body.username};
-// console.log(usernameObj)
-// // let username = usernameObj['username']
-// //let username= ""
-// let patchUrl = 'https://sheet.best/api/sheets/54e2c93f-7ad8-42a8-a6da-a9fe35a77c5b/name/*hello*'
-// axios({
-//     headers: {'Content-Type': 'application/json', 'mode': 'cors'},
-//     method:'put',
-//     url: patchUrl,
-//     data: [{name: 'Eugenia'}]
-// }).then(done => {
-//     res.redirect("/dashboard");
-// }).catch(error=>{
-//     console.log(error)
-// })
-
-// res.redirect('/finished')
-
-//   res.render('withdraw', {
-//     username: username,
-//     balance: balance,
-//     wdAmount: wdAmount
-//   })
-
-// });
 
 server.get("/deposit", (req, res) => {
   res.send("this is deposit");
