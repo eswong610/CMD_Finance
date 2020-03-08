@@ -43,16 +43,19 @@ server.get('/dashboard', (req,res)=>{
     .then(response=>{
         let alldata = response['data'];//response['data'][0]['name']
         let username = alldata[0]['name'];
-        let balance = alldata[0]['balance']
+        let balance = alldata[0]['balance'];
+        let deposit = alldata[0]['deposit'];
+
         userBalance = balance
         
         res.render('dashboard', {
             username: username,
             balance: balance,
+            deposit: deposit,
             wdAmount: wdAmount
         })
     })
-    .catch(error=>{console.log('error')})
+    .catch(error=>{console.log(error)})
 })
 
 server.post("/",(req,res)=>{ //url matches landing page
@@ -82,7 +85,7 @@ server.get("/form", (req, res) => {
             deposit: deposit,  
             withdraw: withdraw
         });
-    })
+    });
 });
 
 
