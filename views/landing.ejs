@@ -10,10 +10,10 @@
     <header>
         <h1>DINO$</h1>
     </header>
-    <form id="" class="" method="POST" action="/post/url">
-        How should we call you? <input class="" name="Name" type="text" placeholder="Name">
-        Birthday <input class="" name="deposit" type="date" placeholder="MM/DD">
-        Starting point <input class="" name="deposit" type="text" placeholder="Amount">
+    <form id="" class="" method="POST" action="/">
+        How should we call you? <input class="" name="name" type="text" placeholder="Name">
+        Birthday <input class="" name="birthday" type="date" placeholder="MM/DD">
+        <!-- Starting point <input class="" name="startingPoint" type="text" placeholder="Amount"> -->
         How much is it?<input class="" name="cost" type="text" placeholder="Goal Amount">
         What's it for?<input class="" name="goal" type="text" placeholder="What is it?">
         When to start?<input class="" name="startDate" type="text" placeholder="Start Date">
@@ -23,31 +23,5 @@
     <footer>
     </footer>
 </body>
-<script>
-    const app = express()
-    app.post("/post/url",(req,res)=>{
-        const data = req.body;
-    
-        fetch('https://sheet.best/api/sheets/54e2c93f-7ad8-42a8-a6da-a9fe35a77c5b', {
-              method: "POST",
-              mode: "cors",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: JSON.stringify(data)
-          })
-        .then(r => r.json())
-        .then(data => {
-          // The response comes here
-          console.log(data);
-          res.redirect("/dashboard")
-        })
-        .catch(error => {
-          // Errors are reported there
-          console.log(error);
-        })
 
-    });
-    
-</script>
 </html>

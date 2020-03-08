@@ -26,7 +26,7 @@ server.set('view engine', 'ejs');
 
 server.get('/', (req, res)=>{
     let newMessage = 'hello'
-    res.render('hello.ejs', {
+    res.render('landing', {
         newMessage : newMessage
     })
 })
@@ -38,7 +38,7 @@ server.get('/finished', (req,res)=>{
     res.send('fin')
 })
 
-server.get('/withdraw', (req,res)=>{
+server.get('/dashboard', (req,res)=>{
     let wdAmount = {'wdAmount': (req.body.wdAmount)};
     axios.get('https://sheet.best/api/sheets/54e2c93f-7ad8-42a8-a6da-a9fe35a77c5b')
     .then(response=>{
@@ -46,7 +46,7 @@ server.get('/withdraw', (req,res)=>{
         let username = alldata[0]['name'];
         let balance = alldata[0]['balance']
         
-        res.render('withdraw', {
+        res.render('dashboard', {
             username: username,
             balance: balance,
             wdAmount: wdAmount
@@ -55,8 +55,9 @@ server.get('/withdraw', (req,res)=>{
     .catch(error=>{console.log('error')})
 })
 
-server.post("/post/url",(req,res)=>{ //url matches landing page
+server.post("/",(req,res)=>{ //url matches landing page
     const data = req.body;
+    console.log(data)
     axios({
         headers: {'Content-Type': 'application/json', 'mode': 'cors'},
         method:'post',
@@ -68,6 +69,8 @@ server.post("/post/url",(req,res)=>{ //url matches landing page
         console.log(error)
     })
 })
+
+
 
 server.get("/form", (req, res) => {
   res.send("This is the form");
