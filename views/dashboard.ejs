@@ -33,6 +33,17 @@
     <!-- photo -->
     <!-- <div id="steg-photo"><img src="/assets/photo/t-rex" /></div> -->
 
+    <nav class="">
+      <ul class="nav nav-pills justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="/collector">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/congrat">Credit Score</a>
+        </li>
+      </ul>
+    </nav>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-10 col-xl-9 mx-auto">
@@ -41,7 +52,9 @@
               <!-- Background image for card set in CSS! -->
             </div>
             <div class="card-body">
-              <h3 class="login-heading mb-4">Hi <%= data.name %>!</h3>
+              <h3 class="login-heading mb-4">
+                Hi <span id="login-name"> <%= data.name %></span> !
+              </h3>
               <div class="container">
                 <div class="row">
                   <div class="col-sm">
@@ -58,7 +71,7 @@
                           class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                           type="submit"
                         >
-                          Put In!
+                          $ In!
                         </button>
                       </div>
                     </form>
@@ -77,7 +90,7 @@
                           class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                           type="submit"
                         >
-                          Take out!
+                          $ out!
                         </button>
                       </div>
                     </form>
