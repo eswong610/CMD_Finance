@@ -4,16 +4,26 @@
 @import "./styles/_font";
 @import "./styles/partials/_form";
 
-
 .dash-body {
-    background-color: white;
+  position: relative;
 }
 
-  
+#steg-photo {
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+}
+
+#steg-photo > img {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+}
+
 .card-signin {
   border: 0;
   border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 5px 5px black;
   overflow: hidden;
 }
 
@@ -26,7 +36,7 @@
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+  background: scroll center url("./assets/photo/t-rex.jpg");
   background-size: cover;
 }
 
@@ -34,24 +44,76 @@
   padding: 2rem;
 }
 
-.budget-container{
-    display: flex;
-    justify-content: space-around;
-
+.budget-container {
+  display: flex;
+  width: 80%;
+  border-radius: 8px;
+  justify-content: center;
+  background: white;
+  margin: 0 auto;
+  padding: 5% 0;
+  box-shadow: 3px 5px 5px black;
 }
 
-.yay{
-    background-color: rgb(143, 245, 143);
+#login-name {
+  color: $darkpurple;
+  text-transform: uppercase;
 }
-.noo-msg , .yay-msg {
-    display: none;
+
+.form-control {
+  margin-bottom: 10px;
+  border: 1px solid $lightgreen;
+}
+
+.time-container {
+  margin: 0 20px;
+}
+
+.yay {
+  background-color: rgb(143, 245, 143);
+}
+.noo-msg,
+.yay-msg {
+  display: none;
 }
 .noo > div > .noo-msg {
-    display:block !important;
+  display: block !important;
 }
 .yay > div > .yay-msg {
-    display: block !important;
+  display: block !important;
 }
-.noo{
-    background: rgb(255, 146, 146)
+.noo {
+  background: rgb(255, 146, 146);
+}
+
+.nav {
+  background: inherit;
+
+  &-pills {
+    list-style: none;
+    border-radius: 20px;
+  }
+
+  &-item {
+    width: 10%;
+    text-align: center;
+    font-size: 1.25em;
+
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px 20px 0 20px;
+    background-color: $lightgreen;
+
+    &:nth-child(2) {
+      margin-right: 50px;
+    }
+  }
+
+  &-link {
+    color: white;
+
+    &:hover {
+      color: $darkpurple;
+    }
+  }
 }

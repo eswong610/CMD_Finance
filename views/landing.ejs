@@ -3,32 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Welcome</title>
   </head>
   <body>
-     <!-- container for sign-in -->
+    <!-- container for sign-in -->
 
      <div class="form-container__wrapper">
         <!-- form on leftside -->
         <div class="form__left">
-          <header class="form__font--header">
-            <h1>DINO$</h1>
+          <header>
+            <h1 class="form__font--header">DINO$</h1>
           </header>
   
           <p>Lets Get Started!</p>
   
           <form id="" class="" method="GET" action="/dashboard">
             <label class="form__label">How should we call you?</label>
+            <!-- <i class="material-icons">&#xE87C;</i> -->
             <input
               class="form__input"
               name="name"
               type="text"
               placeholder="Name"
-            />
+            ></input>
   
             <label class="form__label">Birthday</label>
-            <input class="" name="birthday" type="date" placeholder="MM/DD" />
+            <input class="form__input" name="birthday" type="date" placeholder="MM/DD" />
   
             <!-- <label class="form__label">Starting point</label>
             <input class="form__input" name="startingPoint" type="text" placeholder="Amount" /> -->
@@ -68,6 +71,7 @@
               placeholder="$$$$"
             />
 
+
             <label class="form__label">Do you have consent from your legal guardians to use this app?</label>
             <input
               type="checkbox"
@@ -77,7 +81,7 @@
               type="checkbox"
               value="No"
             />No
-  
+ 
             <button class="form__btn" type="submit">Let's get started!</button>
           </form>
         </div>
@@ -88,6 +92,7 @@
   
         <!--end of image -->
       </div>
+    </div>
     <footer></footer>
   </body>
 </html>
