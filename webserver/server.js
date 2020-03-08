@@ -47,7 +47,7 @@ server.get('/dashboard', (req,res)=>{
     year : year
     
   })
-  .catch(error=>{console.log('error')})
+  .catch(Error=>{console.log('error')})
 
 })
 
