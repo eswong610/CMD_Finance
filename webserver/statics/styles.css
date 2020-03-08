@@ -694,7 +694,7 @@ body {
 }
 
 .yay {
-  background-color: #8ff58f;
+  background-color: #f7de77;
 }
 
 .noo-msg,
@@ -743,5 +743,26 @@ body {
 
 .nav-link:hover {
   color: #8769ac;
+}
+
+.progress-container {
+  width: 50%;
+  margin: 2rem;
+  padding: 0 auto 0 auto;
+  margin-left: 28rem;
+}
+
+.progress {
+  height: 5rem;
+}
+
+.progress-text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 85%;
 }
 /*# sourceMappingURL=styles.css.map */
