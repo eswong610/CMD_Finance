@@ -60,8 +60,8 @@ server.post("/",(req,res)=>{ //url matches landing page
         data: data
     }).then(done => {
         res.redirect("/dashboard");
-    }).catch(error=>{
-        console.log(error)
+    }).catch(Error=>{
+        console.log(Error)
     })
 })
 
