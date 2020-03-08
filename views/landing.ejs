@@ -18,7 +18,7 @@
   
           <p>Lets Get Started!</p>
   
-          <form id="" class="" method="POST" action="/">
+          <form id="" class="" method="GET" action="/dashboard">
             <label class="form__label">How should we call you?</label>
             <input
               class="form__input"
@@ -52,12 +52,20 @@
               placeholder="Start Date"
             />
   
-            <label class="form__label">Target Goal:</label>
+            <label class="form__label">How much can you put in once a month?</label>
             <input
               class="form__input"
-              name="endDate"
+              name="depositAmount"
               type="text"
-              placeholder="Target Date"
+              placeholder="$$$"
+            />
+
+            <label class="form__label">How much do you have?</label>
+            <input
+              class="form__input"
+              name="currentBalance"
+              type="text"
+              placeholder="$$$$"
             />
   
             <button class="form__btn" type="submit">Let's get started!</button>
