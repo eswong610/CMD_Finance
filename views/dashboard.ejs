@@ -15,8 +15,11 @@
   <button id="" type="button" name="deposit">Deposit</button>
   </form>
 <!-- Withdraw form button -->
-  <form id = "" class="" action="withdraw.ejs" method="post">
-  <button id= "" type="button" name="">Withdraw</button></br>
+  <form id = "" class="" action="/withdraw" method="post">
+    <input class="" name="wdAmount" type="text" placeholder="Deposit Amount">
+    
+    <button type="submit">Withdraw</button>
+  
 </form>
 
 <!-- Account -->
@@ -24,7 +27,7 @@
   <li class="list">Your current balance: $<%= balance %></li>
 <!-- Goal -->
   Goal<input id = "" type="hidden" name="displayGoal" value="">
-
+  
 </form>
   </div>
 
