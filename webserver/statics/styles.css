@@ -35,7 +35,7 @@ main {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.5em 0;
 }
 
 /* Grouping content
@@ -383,8 +383,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  width: 40%;
-  margin: 10% auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  margin: 2% auto;
 }
 
 .form__right {
@@ -394,25 +397,69 @@ body {
   background-position: center;
 }
 
+.form__font--header {
+  margin: 0;
+}
+
+.form__label {
+  margin: 5px 0;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 0.5em;
+  border: 2px solid #bcd292;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50%;
+  padding: 2%;
+  border-radius: 20px;
+  background-color: #bcd292;
+  margin: 20px 0;
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  width: 70%;
 }
 
 .dash-body {
-  background-color: white;
+  position: relative;
+}
+
+#steg-photo {
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+}
+
+#steg-photo > img {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
 }
 
 .card-signin {
   border: 0;
   border-radius: 1rem;
-  -webkit-box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 3px 5px 5px black;
+          box-shadow: 3px 5px 5px black;
   overflow: hidden;
 }
 
@@ -425,7 +472,7 @@ form {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("./assets/photo/t-rex.jpg");
   background-size: cover;
 }
 
@@ -437,15 +484,28 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  width: 80%;
+  border-radius: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #bcd292;
+  margin: 0 auto;
+  padding: 5% 0;
+  -webkit-box-shadow: 3px 5px 5px black;
+          box-shadow: 3px 5px 5px black;
+}
+
+.time-container {
+  margin: 0 20px;
 }
 
 .yay {
   background-color: #8ff58f;
 }
 
-.noo-msg, .yay-msg {
+.noo-msg,
+.yay-msg {
   display: none;
 }
 

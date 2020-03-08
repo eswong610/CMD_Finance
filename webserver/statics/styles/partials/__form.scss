@@ -19,8 +19,9 @@ body {
   &__left {
     display: flex;
     flex-flow: column nowrap;
-    width: 40%;
-    margin: 10% auto;
+    align-items: center;
+    width: 50%;
+    margin: 2% auto;
   }
 
   &__right {
@@ -32,20 +33,38 @@ body {
 
   &__font {
     &--header {
+      margin: 0;
     }
   }
 
   &__label {
+    margin: 5px 0;
+    margin-bottom: 10px;
   }
 
   &__input {
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0.5em;
+    border: 2px solid $lightgreen;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__btn {
+    align-self: center;
+    width: 50%;
+    padding: 2%;
+    border-radius: 20px;
+    background-color: $lightgreen;
+    margin: 20px 0;
   }
 }
 
 form {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  width: 70%;
 }
