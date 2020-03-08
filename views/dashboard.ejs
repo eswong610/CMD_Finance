@@ -4,32 +4,63 @@
     <meta charset="utf-8">
     <title></title>
     <!-- <h3>Hello<input type="hidden" name="displayName" value="">!</h3> -->
-  </head>
-<body>
-<li class="list">Hi <%= username %></li>
-<div class="GoalForm">
-<form id ="" class="" action="index.html" method="post">
-
-<!-- Deposit form button -->
-  <form id = "" class="" action="index.html" method="post">
-  <button id="" type="button" name="deposit">Deposit</button>
-  </form>
-<!-- Withdraw form button -->
-  <form id = "" class="" action="/withdraw" method="post">
-    <input class="" name="wdAmount" type="text" placeholder="Deposit Amount">
     
-    <button type="submit">Withdraw</button>
-  
-</form>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
 
-<!-- Account -->
-  Account<input id = "" type="hidden" name="displayAccount" value="" ></br>
-  <li class="list">Your current balance: $<%= balance %></li>
-<!-- Goal -->
-  Goal<input id = "" type="hidden" name="displayGoal" value="">
-  
-</form>
-  </div>
+<body class="dash-body"> 
 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex bg-image">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <h3 class="login-heading mb-4">Hi <%= username %>!</h3>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <form class="form-signin">
+                      <div class="form-label-group">
+                        <input type="" id="" class="form-control" placeholder="amount" required>
+                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Put In!</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-sm">
+                    <form class="form-signin">
+                      <div class="form-label-group">
+                        <input type="" id="" class="form-control" placeholder="amount" required>
+                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Take out!</button>
+                      </div>
+                    </form>
+                  </div>
+      
+
+                  
+                  
+
+
+      
+                </div>
+                <p>Your current balance: $<%= balance %></p>
+                <p>Goal: $200.00</p>
+                <p>Goal Target: a new bike</p>
+              </div>
+
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+
+
 </html>

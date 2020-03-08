@@ -57,7 +57,6 @@ server.get('/dashboard', (req,res)=>{
 
 server.post("/",(req,res)=>{ //url matches landing page
     const data = req.body;
-    console.log('this is req.body' + data)
     axios({
         headers: {'Content-Type': 'application/json', 'mode': 'cors'},
         method:'post',
