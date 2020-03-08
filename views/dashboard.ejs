@@ -68,8 +68,8 @@
                           required
                         />
                         <button
-                          class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                          type="submit"
+                          class="depositBtn btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          type="submit" 
                         >
                           $ In!
                         </button>
@@ -142,7 +142,7 @@ Launch demo modal
 </button> -->
 
 
-<!-- Modal -->
+<!-- Avatar Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -154,6 +154,9 @@ Launch demo modal
     </div>
     <div class="modal-body">
       <p>Congratulations! You've unlocked <em>Credit Cactus</em></p>
+      <img style="width: 8rem; height: auto; text-align: center;" src="https://images.unsplash.com/photo-1554631221-f9603e6808be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2317&q=80">
+      <p> Credit Score facts or something</p>
+      
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -163,11 +166,38 @@ Launch demo modal
 </div>
 </div>
 
-<% if (true) { %>
+
+<div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Good Job!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>You earned 10 Eggs for putting $10 toward your goal!</p>
+        <img style="width: 10rem; height: auto; text-align: center;" src="https://images.unsplash.com/photo-1577975629051-47d899da5640?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<% if (data.currentBalance >= data.goal) { %>
   <script>$('#exampleModal').modal('show')</script>
 <% } %>
 
+<script> 
+  $('.depositBtn').click(function() {
+    $('#depositModal').modal('show')
+  })
 
+</script>
 
    
   </body>
