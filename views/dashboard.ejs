@@ -52,9 +52,9 @@
               <!-- Background image for card set in CSS! -->
             </div>
             <div class="card-body">
-              <h3 class="login-heading mb-4">
+              <h2 class="login-heading mb-4">
                 Hi <span id="login-name"> <%= data.name %></span> !
-              </h3>
+              </h2>
               <div class="container">
                 <div class="row">
                   <div class="col-sm">
@@ -68,7 +68,7 @@
                           required
                         />
                         <button
-                          class="depositBtn btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          class="depositBtn new-btn btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                           type="submit" 
                         >
                           $ In!
@@ -87,10 +87,10 @@
                           required
                         />
                         <button
-                          class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          class="btn new-btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                           type="submit"
                         >
-                          $ out!
+                          $ Out!
                         </button>
                       </div>
                     </form>
@@ -99,6 +99,12 @@
                 <p>Your current balance: $<%= data.currentBalance %></p>
                 <p>Goal: $<%= data.cost %></p>
                 <p>Goal Name: <%= data.goal %></p>
+                <button
+                          class="interestRate new-btn btn btn-primary btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          type="submit" 
+                        >
+                          Interest Rate!
+                        </button>
               </div>
             </div>
           </div>
@@ -111,27 +117,27 @@
         class="time-container card card-signin pb-5 pt-5 px-5 <% if ( parseInt(year) >= parseInt(data.cost)){%>yay<%}else{%> noo <% } %>  "
       >
         <div class="money-container py-5 px-3">
-          <p>In a year: $<%= year %></p>
+          <h4 style="text-align:center;">In a year: </h4>
+          <h2 style="text-align:center;">$<%= year %></h2>
 
-          <p class="yay-msg">
+          <p style="text-align:center;" class="yay-msg">
             Congrats! You will save enough for a <%= data.goal %> in a year.
           </p>
-          <p class="noo-msg"> 
-            Oh no, <%= data.goal %> is too much! You will not have enough in a month from now.
-          </p>
+          <h4 style="text-align:center;" class="noo-msg">Oh no, <%= data.goal %> is too much! </h4>
+          <h4 style="text-align:center;" class="noo-msg">Keep saving or put some more money in dinobank. </h4>
         </div>
       </div>
 
 
       <div class="time-container card card-signin pb-5 pt-5 px-5 <% if (parseInt(month) >= parseInt(data.cost)){%> yay <%}else{%> noo <% } %>">
         <div class="money-container py-5 px-3">
-          <p>In a month: $<%= month %></p>
-          <p class="yay-msg"> 
+          <h4 style="text-align:center;">In a month: </h4>
+          <h2 style="text-align:center;">$<%= month %></h2>
+          <p style="text-align:center;" class="yay-msg">
             Congrats! You will save enough for <%= data.goal %> in a month.
           </p>
-          <p class="noo-msg">
-            Oh no, <%= data.goal %> is too much! You will not have enough in a month from now.
-          </p>
+          <h4 style="text-align:center;" class="noo-msg">Oh no, <%= data.goal %> is too much! </h4>
+          <h4 style="text-align:center;" class="noo-msg">Keep saving or put some more money in dinobank. </h4>
         </div>
       </div>
 
@@ -169,7 +175,6 @@ Launch demo modal
 </div>
 </div>
 
-
 <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -204,6 +209,28 @@ Launch demo modal
 </div>
 
 
+<div class="modal fade" id="interestRateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">What is this?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 style="text-align:center;">Compound Interest is 1% a year
+        <h5>As long as you keep your month, your money with grow, it will keep adding up with each month and year!</h5>
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
 <% if (data.currentBalance >= data.goal) { %>
   <script>$('#exampleModal').modal('show')</script>
 <% } %>
@@ -212,7 +239,9 @@ Launch demo modal
   $('.depositBtn').click(function() {
     $('#depositModal').modal('show')
   })
-
+  $('.interestRate').click(function() {
+    $('#interestRateModal').modal('show')
+  })
 </script>
 
    
