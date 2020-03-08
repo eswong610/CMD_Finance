@@ -43,7 +43,15 @@
 .yay{
     background-color: rgb(143, 245, 143);
 }
-
+.noo-msg , .yay-msg {
+    display: none;
+}
+.noo > div > .noo-msg {
+    display:block !important;
+}
+.yay > div > .yay-msg {
+    display: block !important;
+}
 .noo{
     background: rgb(255, 146, 146)
 }
