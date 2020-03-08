@@ -1,3 +1,16 @@
 body{
-    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list{
+    list-style: none;
+    text-align: center;
+    font-size: 10rem;
+
+}
+
+.title{
+    text-align: center;
+    font-size: 10rem;
 }
